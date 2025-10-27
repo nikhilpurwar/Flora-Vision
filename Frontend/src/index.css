@@ -1,0 +1,40 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* base resets and small design helpers */
+:root {
+  --body-bg: #0f2214;
+  --card-bg: rgba(255,255,255,0.04);
+  --glass: rgba(255,255,255,0.03);
+}
+
+html,body,#root {
+  height: 100%;
+}
+
+body {
+  background: linear-gradient(180deg, #09150b 0%, #0f2214 60%);
+  color: #e6f7e6;
+  font-family: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.container-lg {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* utility for decorative glass card look used in Figma */
+.glass {
+  background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.02));
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+
+/* subtle focus outline for accessibility */
+:focus {
+  outline: 3px solid rgba(123,191,74,0.24);
+  outline-offset: 2px;
+}
