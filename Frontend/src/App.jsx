@@ -7,34 +7,46 @@ import TestimonialCard from "./components/TestimonialCard";
 import FeaturedO2 from "./components/FeaturedO2";
 import Footer from "./components/Footer";
 
-/* sample data — replace images with actual assets */
+// use project assets
+import bg from "./assets/nagy-arnold-X_IvVDuHvDQ-unsplash.png";
+import pA from "./assets/unsplash__7LbC5J-jw4.png";
+import pB from "./assets/unsplash__7LbC5J-jw4-1.png";
+import pC from "./assets/unsplash__7LbC5J-jw4-2.png";
+import logo from "./assets/image.png";
+
 const trending = [
-  { id: 1, title: "For Your Desks Decorations", price: "Rs. 599/-", excerpt: "I recently added a beautiful desk decoration plant...", img: "/images/plant1.jpg" },
-  { id: 2, title: "For Your Desks Decorations", price: "Rs. 399/-", excerpt: "The greenery adds a touch of nature...", img: "/images/plant2.jpg" }
+  { id: 1, title: "For Your Desks Decorations", price: "Rs. 599/-", excerpt: "I recently added a beautiful desk decoration plant to my workspace, and it has made such a positive difference!", img: pA },
+  { id: 2, title: "For Your Desks Decorations", price: "Rs. 399/-", excerpt: "The greenery adds a touch of nature and serenity to my desk, making it feel more inviting and calming", img: pB }
 ];
 
 const topSelling = [
-  { id: 1, name: "Aglaonema plant", price: "Rs. 300/-", desc: "Attractive foliage...", img: "/images/p1.jpg" },
-  { id: 2, name: "Plantain Lilies", price: "Rs. 380/-", desc: "Wide variety of sizes.", img: "/images/p2.jpg" },
-  { id: 3, name: "Cactus", price: "Rs. 259/-", desc: "Great for arid spaces.", img: "/images/p3.jpg" },
-  { id: 4, name: "Swiss cheese Plant", price: "Rs. 400/-", desc: "Unique perforated leaves", img: "/images/p4.jpg" },
-  { id: 5, name: "Sansevieria plant", price: "Rs. 450/-", desc: "Low maintenance", img: "/images/p5.jpg" },
-  { id: 6, name: "Agave plant", price: "Rs. 359/-", desc: "Succulent variety", img: "/images/p6.jpg" },
+  { id: 1, name: "Aglaonema plant", price: "Rs. 300/-", desc: "The Aglaonema plant, commonly known as Chinese Evergreen known for its attractive foliage and ease of care", img: pA },
+  { id: 2, name: "Plantain Lilies", price: "Rs. 380/-", desc: "Hostas are primarily grown for their lush, decorative leaves, which come in a wide variety of shapes, sizes.", img: pB },
+  { id: 3, name: "Cactus", price: "Rs. 259/-", desc: "It is known for their ability to thrive in arid environments", img: pC },
+  { id: 4, name: "Swiss cheese Plant", price: "Rs. 400/-", desc: "A popular tropical houseplant known for its distinctive, perforated leaves", img: pA },
+  { id: 5, name: "Sansevieria plant", price: "Rs. 450/-", desc: "Known for its striking appearance and low-maintenance nature.", img: pB },
+  { id: 6, name: "Agave plant", price: "Rs. 359/-", desc: "A genus of succulent plants known for their striking rosette and architectural forms.", img: pC },
 ];
 
 const testimonials = [
-  { id: 1, name: "Shelly Russel", rating: 5, text: "Just got my hands on some beautiful indoor plants...", avatar: "/images/avatar1.jpg" },
-  { id: 2, name: "Lula Rolfson", rating: 5, text: "Each one has its own charm and personality...", avatar: "/images/avatar2.jpg" },
-  { id: 3, name: "Carol Huels", rating: 5, text: "It's like bringing a little piece of nature indoors...", avatar: "/images/avatar3.jpg" },
+  { id: 1, name: "Shelly Russel", rating: 5, text: "Just got my hands on some absolutely awesome plants, and I couldn’t be happier!", avatar: logo },
+  { id: 2, name: "Lula Rolfson", rating: 5, text: "Each one has its own unique charm and personality, they’ve already started brightening up my space.", avatar: logo },
+  { id: 3, name: "Carol Huels", rating: 5, text: "It's like bringing a little piece of nature indoors. Definitely worth the investment—my collection has never looked better!", avatar: logo },
 ];
 
 export default function App() {
   return (
-    <div className="min-h-screen">
+    <>
+    <div
+          className="absolute top-[-125px] w-full h-[2592px] bg-cover bg-center opacity-40"
+          style={{ backgroundImage: `url(${bg})` }}
+        />
+    <div className="min-h-screen bg-[linear-gradient(180deg,#09150b_0%,#0f2214_60%)]" >
+      
       <Navbar />
       <main>
-        <HeroBanner />
-        <section className="container-lg px-6 lg:px-0 mt-12">
+        <HeroBanner  />
+        <section className="container-lg px-6 lg:px-0 mt-12 pb-20">
           <SectionTitle title="Our Trendy plants" />
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
             {trending.map(p => (
@@ -62,5 +74,6 @@ export default function App() {
 
       <Footer />
     </div>
+    </>
   );
 }
