@@ -28,13 +28,48 @@ body {
 
 /* utility for decorative glass card look used in Figma */
 .glass {
-  background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.02));
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  /* Optional for subtle depth */
+  box-shadow: 0px 9px 18px rgba(0, 0, 0, 0.25);
 }
+
 
 /* subtle focus outline for accessibility */
 :focus {
   outline: 3px solid rgba(123,191,74,0.24);
   outline-offset: 2px;
 }
+
+
+
+/* gradient border layer */
+.customBorder::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 2px; /* border thickness */
+  background: linear-gradient(
+    135.72deg,
+    rgba(255, 255, 255, 0.27) 8.53%,
+    rgba(255, 255, 255, 0) 60.59%,
+    rgba(255, 255, 255, 0.33) 93.17%
+  );
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+          mask-composite: exclude;
+  pointer-events: none; /* allow clicks through border */
+  z-index: 0;
+}
+
+/* ensures content is above the border layer */
+.customBorder > * {
+  position: relative;
+  z-index: 0;
+}
+
+
