@@ -8,8 +8,8 @@ export default function Navbar() {
 
   return (
     <>
-      <header className="bg-transparent sticky top-0 z-40">
-        <div className="px-6 flex items-center justify-between pt-8">
+      <header className=" bg-transparent sticky top-0 z-40">
+        <div className="w-[1660px] justify-self-center px-4 flex items-center justify-between pt-8">
           <div className="flex justify-center items-center gap-2">
             <img className="h-[48px] w-[48px]" src={logo} alt="logo" />
             <p className="font-inter font-black text-[28px] leading-[100%] tracking-[0%]">FloraVision.</p>
